@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+ 	<CstmrCdtTrfInitn>
+ 		<GrpHdr>
+ 			<MsgId>1.1 Referencia identificativa del fichero</MsgId>
+			<CreDtTm>1.2 Fecha y hora de confección fichero</CreDtTm>
+ 			<NbOfTxs>1.6 Número total de operaciones del fichero</NbOfTxs>
+			<CtrlSum>1.7 Importe total del fichero</CtrlSum>
+ 			<InitgPty>
+				<Nm>1.8 Nombre parte iniciadora, ordenante u otra persona que inicie el pago en su nombre</Nm>
+ 				<Id>
+ 					<OrgId>
+ 						<Othr>
+ 							<Id>1.8 NIF-sufijo presentador NNNNNNNNNSSS</Id>
+ 						</Othr>
+ 					</OrgId>
+				</Id>
+ 			</InitgPty>
+ 		</GrpHdr>
+ 		<PmtInf>
+ 			<PmtInfId>2.1 Identificación de Información del pago – unívoca e irrepetible en un mismo fichero</PmtInfId>
+			<PmtMtd>2.2 Método de pago - TRF=Transferencia - CHK=Cheque bancario o cheque-nómina, pagaré, pago domiciliado</PmtMtd>
+ 			<BtchBookg>2.3 Indicador de apunte en cuenta</BtchBookg>
+ 			<NbOfTxs>2.4 Número de operaciones del bloque Información del pago</NbOfTxs>
+ 			<CtrlSum>2.5 Importe del bloque Información del pago</CtrlSum>
+ 			<PmtTpInf>
+ 				<InstrPrty>2.7 Prioridad de la instrucción - grado de urgencia - HIGH - NORM</InstrPrty>
+ 				<SvcLvl>
+ 					<Cd>2.9 Nivel de servicio - SEPA - URGP</Cd>
+				</SvcLvl>
+				<LclInstrm>
+ 					<Cd>2.11 Instrumento Local - SDCL si requiere liquidación propio día</Cd>
+ 				</LclInstrm>
+				 <CtgyPurp>
+				 	<Cd>2.15 Código identificativo del objeto o finalidad - SALA – PENS - OTHR ...</Cd>
+				 </CtgyPurp>
+ 			</PmtTpInf> 
+ 			<ReqdExctnDt>2-17 Fecha de ejecución solicitada en formato AAAA-MM-DD</ReqdExctnDt>
+ 			<Dbtr> 
+ 				<Nm>2.19 Nombre del Ordenante - Quien debe el importe al beneficiario o al último beneficiario</Nm>
+ 				<PstlAdr>
+ 					<Ctry>2.19 País según código ISO 3166 Alpha-2</Ctry>
+ 					<AdrLine>2.19 Dirección en texto libre hasta 70 caracteres</AdrLine>
+ 					<AdrLine>2.19 Dirección en texto libre hasta 70 caracteres</AdrLine>
+ 				</PstlAdr>
+ 				<Id>
+					<OrgId>
+						<Othr>
+						 	<Id>2.19 NIF-sufijo ordenante NNNNNNNNNSSS</Id>
+						</Othr>
+					</OrgId>
+				</Id>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>2.20 Cuenta del ordenante en formato IBAN</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>2.21 Siempre CAIXESBBXXX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<UltmtDbtr>
+				<Nm>2.23 Nombre del Ultimo Ordenante - Por cuenta de quien se realiza el pago</Nm>
+			</UltmtDbtr>
+			<ChrgBr>2.24 Cláusula de gastos - SLEV-CRED-DEBT-SHAR</ChrgBr>
+			<CdtTrfTxInf>
+				<PmtId>
+					<InstrId>2.29 Referencia única ordenante para identificar la operación hasta 35 caracteres</InstrId>
+					<EndToEndId>2.30 Referencia única para beneficiario hsta 35 caracteres</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">2.43 Importe</InstdAmt>
+				</Amt>
+				<ChqInstr>
+					<ChqTp>BCHQ-cheque bancario, CCCH-cheque cliente, ELDR-pagaré, pago domiciliado</ChqTp>
+					<DlvryMtd>
+						<Cd>MLCD-envío por correo al beneficiario, MLDB-...</Cd>
+					</DlvryMtd>
+					<PrtLctn>Ejemplo: 111000-Cheque bancario barrado</PrtLctn>
+				</ChqInstr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>2.77 BIC de la entidad del beneficiario (opcional, ver 4.1)</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>2.79 Nombre del beneficiario</Nm>
+				</Cdtr>
+				<CdtrAcct>
+						<IBAN>2.80 Cuenta del beneficiario en formato IBAN</IBAN>
+					</Id>
+				</CdtrAcct>
+				<UltmtCdtr>
+					<Nm>2.81 Nombre del último beneficiario</Nm>
+				</UltmtCdtr>
+				<RmtInf>
+					<Ustrd>2.99 Concepto no estructurado de hasta 140 caracteres</Ustrd>
+				</RmtInf>
+			</CdtTrfTxInf>
+		</PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>
